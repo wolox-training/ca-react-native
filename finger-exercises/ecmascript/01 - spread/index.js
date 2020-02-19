@@ -14,3 +14,9 @@ export function reverseMerge(...value) {
   newArray.unshift(...value[1]);
   return newArray;
 }
+
+export function filterAttribs(value) {
+  const newObject = copy(value);
+  const { a, b, ...other } = newObject
+  return other;
+}
