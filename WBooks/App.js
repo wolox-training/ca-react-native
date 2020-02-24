@@ -12,7 +12,7 @@ import {
   StatusBar,
 } from 'react-native';
 
-import BookList from './src/app/screens/Library';
+import BookList from './src/app/screens/Library/screens';
 
 const App =() => {
   return (
