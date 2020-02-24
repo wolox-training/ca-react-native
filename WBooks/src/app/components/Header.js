@@ -6,7 +6,7 @@ import nabBarImage from '../assets/bc_nav_bar.png';
 const Header = () => {
     return(    
     <ImageBackground
-        // accessibilityRole={'image'}
+        accessibilityRole={'image'}
         source={nabBarImage}
         style={styles.background}
         imageStyle={styles.logo}>
@@ -14,12 +14,13 @@ const Header = () => {
     </ImageBackground>)
 }
 
-const styles = StyleSheet.create({
+const styles = StyleSheet.create({ //TODO: donde van estos styles?
     background: {
         height: 150,
         width: '100%',
         justifyContent: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
+        backgroundColor: colors.lightBackgroundBlue,
     },
     logo: {
         overflow: 'visible',

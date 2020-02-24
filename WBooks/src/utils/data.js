@@ -79,16 +79,16 @@ const booksList = [
         "image_url": "http://wolox-training.s3.amazonaws.com/uploads/el-psicoanalista-analyst-john-katzenbach-paperback-cover-art.jpg",
         "description": null
     },
-    {
-        "id": 9,
-        "author": "Andy Weir",
-        "title": "The Martian",
-        "genre": "fiction",
-        "publisher": "Crown Publishing Group",
-        "year": "2011",
-        "image_url": "http://wolox-training.s3.amazonaws.com/uploads/41DNuJfahyL._SX322_BO1_204_203_200_.jpg",
-        "description": null
-    },
+    // {
+    //     "id": 9,
+    //     "author": "Andy Weir",
+    //     "title": "The Martian",
+    //     "genre": "fiction",
+    //     "publisher": "Crown Publishing Group",
+    //     "year": "2011",
+    //     "image_url": "http://wolox-training.s3.amazonaws.com/uploads/41DNuJfahyL._SX322_BO1_204_203_200_.jpg",
+    //     "description": null
+    // },
     {
         "id": 10,
         "author": "Dani",

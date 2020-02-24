@@ -10,6 +10,7 @@ import React from 'react';
 import {
   SafeAreaView,
   StatusBar,
+  View,
 } from 'react-native';
 
 import BookList from './src/app/screens/Library/screens';
@@ -20,9 +21,7 @@ const App =() => {
     <>
       <StatusBar barStyle='light-content' />
       <Header />
-      <SafeAreaView>
         <BookList />
-      </SafeAreaView>
     </>
   );
 };
