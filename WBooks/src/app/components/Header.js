@@ -1,31 +1,36 @@
-import {Text, StyleSheet, ImageBackground} from 'react-native';
+import React from 'react';
+import { Text, StyleSheet, ImageBackground } from 'react-native';
+import colors from '../../utils/colors';
+import nabBarImage from '../assets/bc_nav_bar.png';
 
 const Header = () => {
+    return(    
     <ImageBackground
-        accessibilityRole={'image'}
-        source={'./bc_nav bar.png'}
+        // accessibilityRole={'image'}
+        source={nabBarImage}
         style={styles.background}
         imageStyle={styles.logo}>
             <Text style={styles.text}>Library</Text>
-        </ImageBackground>
+    </ImageBackground>)
 }
 
 const styles = StyleSheet.create({
     background: {
-        paddingBottom: 40,
-        paddingTop: 96,
-        paddingHorizontal: 32,
-        backgroundColor: Colors.lighter,  
+        height: 150,
+        width: '100%',
+        justifyContent: 'center',
+        alignItems: 'center'
     },
     logo: {
         overflow: 'visible',
         resizeMode: 'cover',
+        height: '100%',
+        width: '100%',
     },
     text: {
-        fontSize: 40,
-        fontWeight: '600',
+        fontSize: 25,
         textAlign: 'center',
-        color: Colors.black,
+        color: colors.white,
       },
 })
 
