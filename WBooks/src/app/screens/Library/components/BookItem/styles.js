@@ -1,5 +1,5 @@
 import { StyleSheet }  from 'react-native';
-import colors from '../../../../../utils/colors';
+import colors from '../../../../../constants/colors';
 
 const styles = StyleSheet.create({
   bookItem: {

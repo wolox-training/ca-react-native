@@ -5,7 +5,7 @@ import {
   } from 'react-native';
 
 import BookItem from '../../components/BookItem';
-import booksList from '../../../../../utils/data';
+import booksList from '../../../../../constants/data';
 import styles from './styles';
 
 function BookList() {
