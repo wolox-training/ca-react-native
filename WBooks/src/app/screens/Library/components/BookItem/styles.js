@@ -1,37 +1,36 @@
 import { StyleSheet }  from 'react-native';
-import colors from '../../../../utils/colors';
+import colors from '../../../../../utils/colors';
 
 const styles = StyleSheet.create({
-  booksListContainer: {
-    flex: 1,
-    backgroundColor: colors.lightBackgroundBlue,
-  },
   bookItem: {
     marginHorizontal: 20,
     marginVertical: 10,
     borderRadius: 5,
-    padding: 20,
+    paddingHorizontal: 20,
+    paddingVertical: 15,
     height: 100,
     backgroundColor: colors.white,
     flexDirection: 'row',
   },
+  bookImage: {
+    width: 50,
+    height: 70,
+    resizeMode: 'contain',
+  },
+  bookDescription: {
+    flex: 1,
+  },
   title: {
     marginLeft: 15,
     color: colors.title,
-    fontSize: 20,
+    fontSize: 17,
+    fontWeight: 'bold',
   },
   author: {
     marginLeft: 15,
     color: colors.subtitle,
     fontSize: 15,
   },
-  bookImage: {
-    width: 50,
-    height: 70,
-  },
-  bookDescription: {
-    flex: 1,
-  }
 });
 
-  export default styles;
+export default styles;

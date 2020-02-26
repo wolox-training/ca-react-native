@@ -1,22 +1,22 @@
 import React from 'react';
 import {
   FlatList,
-  View
+  SafeAreaView,
   } from 'react-native';
 
-import BookItem from '../components/bookItem';
-import booksList from '../../../../utils/data';
+import BookItem from '../../components/BookItem';
+import booksList from '../../../../../utils/data';
 import styles from './styles';
 
 function BookList() {
     return (
-      <View style={styles.booksListContainer}>
+      <SafeAreaView style={styles.booksListContainer}>
         <FlatList
           data={booksList}
           renderItem={({ item }) => <BookItem title={item.title} url={item.image_url} author={item.author} />}
           keyExtractor={item => (item.id.toString())}
         />
-      </View>
+      </SafeAreaView>
     )
 }
 

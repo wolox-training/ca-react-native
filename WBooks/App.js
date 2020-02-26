@@ -11,7 +11,7 @@ import {
   StatusBar,
 } from 'react-native';
 
-import BookList from './src/app/screens/Library/screens';
+import BookList from './src/app/screens/Library/screens/BookItem';
 import Header from './src/app/components/Header';
 
 function App() {
