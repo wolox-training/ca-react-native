@@ -3,7 +3,7 @@ import { Text, ImageBackground } from 'react-native';
 import nabBarImage from  '../../assets/bc_nav_bar.png';
 import styles from './styles';
 
-const Header = () => {
+function Header() {
     return(    
     <ImageBackground
         accessibilityRole={'image'}

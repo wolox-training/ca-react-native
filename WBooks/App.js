@@ -7,10 +7,7 @@
  */
 
 import React from 'react';
-import {
-  StatusBar,
-} from 'react-native';
-
+import { StatusBar } from 'react-native';
 import BookList from './src/app/screens/Library/screens/BookItem';
 import Header from './src/app/components/Header';
 
