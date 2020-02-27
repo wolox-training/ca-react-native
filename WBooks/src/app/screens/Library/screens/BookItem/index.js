@@ -9,12 +9,12 @@ import booksList from '../../../../../constants/data';
 import styles from './styles';
 
 class BookList extends Component {
-  renderBook = ({ item }) => {
+  renderBook = ({ item: { title, image_url: url, author } }) => {
     return (
       <BookItem
-        title={item.title}
-        url={item.image_url}
-        author={item.author}  
+        title={title}
+        url={url}
+        author={author}  
       />
     );
   };
