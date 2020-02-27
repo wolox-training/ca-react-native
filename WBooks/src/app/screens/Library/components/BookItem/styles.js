@@ -1,5 +1,5 @@
 import { StyleSheet }  from 'react-native';
-import colors from '../../../../../constants/colors';
+import { white, darkGray, lightGray } from '../../../../../constants/colors';
 
 const styles = StyleSheet.create({
   bookItem: {
@@ -9,7 +9,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
     paddingVertical: 15,
     height: 100,
-    backgroundColor: colors.white,
+    backgroundColor: white,
     flexDirection: 'row',
   },
   bookImage: {
@@ -22,13 +22,13 @@ const styles = StyleSheet.create({
   },
   title: {
     marginLeft: 15,
-    color: colors.title,
+    color: darkGray,
     fontSize: 17,
     fontWeight: 'bold',
   },
   author: {
     marginLeft: 15,
-    color: colors.subtitle,
+    color: lightGray,
     fontSize: 15,
   },
 });

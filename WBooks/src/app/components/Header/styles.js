@@ -1,5 +1,5 @@
 import { StyleSheet }  from 'react-native';
-import colors from '../../../constants/colors';
+import { lightBackgroundBlue, white } from '../../../constants/colors';
 
 const styles = StyleSheet.create({
     background: {
@@ -7,7 +7,7 @@ const styles = StyleSheet.create({
         width: '100%',
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: colors.lightBackgroundBlue,
+        backgroundColor: lightBackgroundBlue,
     },
     logo: {
         overflow: 'visible',
@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
     text: {
         fontSize: 25,
         textAlign: 'center',
-        color: colors.white,
+        color: white,
       },
 })
 

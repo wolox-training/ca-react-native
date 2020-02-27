@@ -1,10 +1,10 @@
 import { StyleSheet }  from 'react-native';
-import colors from '../../../../../constants/colors';
+import { lightBackgroundBlue } from '../../../../../constants/colors';
 
 const styles = StyleSheet.create({
   booksListContainer: {
     flex: 1,
-    backgroundColor: colors.lightBackgroundBlue,
+    backgroundColor: lightBackgroundBlue,
   },
 });
 
