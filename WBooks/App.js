@@ -7,14 +7,10 @@
  */
 import 'react-native-gesture-handler';
 import React from 'react';
-import {
-  SafeAreaView,
-  StatusBar,
-  View,
-} from 'react-native';
+import { StatusBar } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import BookList from './src/app/screens/Library/screens';
+import BookList from './src/app/screens/Library/screens/BookItem';
 import BookDetails from './src/app/screens/BookDetails/screens';
 import Header from './src/app/components/Header';
 
