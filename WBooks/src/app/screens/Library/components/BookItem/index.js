@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import {
       View,
       Text,
@@ -7,7 +8,7 @@ import styles from './styles';
 import BookImage from '../BookImage';
 
 function BookItem( { title, url, author }) {
-    const titleTrimmed = typeof title === 'string' ? title.trim() : "No title";
+    const titleTrimmed = title.trim();
     return (
         <View style={styles.bookItem}>
             <BookImage url={url} style={styles.bookImage} />
@@ -17,6 +18,12 @@ function BookItem( { title, url, author }) {
             </View>
         </View>
     );
+}
+
+BookItem.PropTypes = {
+    title: PropTypes.string,
+    url: PropTypes.string,
+    author: PropTypes.string
 }
 
 export default BookItem;
