@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import {
   FlatList,
   SafeAreaView,
@@ -8,16 +8,30 @@ import BookItem from '../../components/BookItem';
 import booksList from '../../../../../constants/data';
 import styles from './styles';
 
-function BookList() {
+class BookList extends Component {
+  renderBook = ({ item }) => {
+    return (
+      <BookItem
+        title={item.title}
+        url={item.image_url}
+        author={item.author}  
+      />
+    );
+  };
+
+  elementKeyExtractor = (item) => item.id.toString()
+
+  render() {
     return (
       <SafeAreaView style={styles.booksListContainer}>
         <FlatList
           data={booksList}
-          renderItem={({ item }) => <BookItem title={item.title} url={item.image_url} author={item.author} />}
-          keyExtractor={item => (item.id.toString())}
+          renderItem={this.renderBook}
+          keyExtractor={this.elementKeyExtractor}
         />
       </SafeAreaView>
-    )
+    );
+  };
 }
 
 export default BookList;
