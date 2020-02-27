@@ -20,10 +20,10 @@ function BookItem( { title, url, author }) {
     );
 }
 
-BookItem.PropTypes = {
-    title: PropTypes.string,
+BookItem.propTypes = {
+    title: PropTypes.string.isRequired,
     url: PropTypes.string,
-    author: PropTypes.string
+    author: PropTypes.string.isRequired
 }
 
 export default BookItem;
