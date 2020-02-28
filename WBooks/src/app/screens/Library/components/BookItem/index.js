@@ -6,11 +6,11 @@ import BookImage from '../../../../components/BookImage';
 
 import styles from './styles';
 
-function BookItem({ title, url, author, onPress }) {
+function BookItem({ title, url, author, handleOnPress }) {
   const titleTrimmed = title.trim();
   return (
-    <TouchableOpacity style={styles.bookItem} onPress={onPress}>
-      <BookImage url={url} style={styles.bookImage} />
+    <TouchableOpacity style={styles.bookItem} onPress={handleOnPress}>
+      <BookImage style={styles.bookImage} url={url} />
       <View style={styles.bookDescription}>
         <Text style={styles.title}>{titleTrimmed}</Text>
         <Text style={styles.author}>{author}</Text>
@@ -21,8 +21,8 @@ function BookItem({ title, url, author, onPress }) {
 
 BookItem.propTypes = {
   author: PropTypes.string.isRequired,
+  handleOnPress: PropTypes.func.isRequired,
   title: PropTypes.string.isRequired,
-  onPress: PropTypes.func.isRequired,
   url: PropTypes.string
 };
 

@@ -4,12 +4,13 @@ import { Image } from 'react-native';
 
 import defaultImage from '../../assets/default_image.png';
 
-function BookImage({ url, style }) {
+function BookImage({ style, url }) {
   return <Image style={style} source={url ? { uri: url } : defaultImage} />;
 }
 
 BookImage.propTypes = {
-  style: PropTypes.object.isRequired
+  // eslint-disable-next-line react/forbid-foreign-prop-types
+  style: Image.propTypes.style,
   url: PropTypes.string
 };
 

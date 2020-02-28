@@ -6,13 +6,13 @@ import BookImage from '../../../../components/BookImage';
 
 import styles from './styles';
 
-function BookDetails({ title, author, url, year, genre }) {
-  // const { title, author, image_url: url, year, genre } = book.params;
+function BookDetails({ book }) {
+  const { title, author, year, genre, imageUrl } = book;
   return (
     <SafeAreaView>
       <ScrollView style={styles.bookDetails}>
         <View style={styles.bookInfoContainer}>
-          <BookImage url={url} style={styles.bookImage} />
+          <BookImage style={styles.bookImage} url={imageUrl} />
           <View style={styles.bookInfo}>
             <Text style={styles.title}>{title}</Text>
             <Text style={styles.status}>Not available</Text>
@@ -36,11 +36,13 @@ function BookDetails({ title, author, url, year, genre }) {
 
 BookDetails.propTypes = {
   author: PropTypes.string.isRequired,
-  book: PropTypes.object.isRequired,
-  genre: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
-  year: PropTypes.string.isRequired,
-  url: PropTypes.string
+  book: PropTypes.shape({
+    author: PropTypes.string.isRequired,
+    genre: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    year: PropTypes.string.isRequired,
+    imageUrl: PropTypes.string
+  }).isRequired
 };
 
 export default BookDetails;
