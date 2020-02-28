@@ -6,7 +6,7 @@ import {
       TouchableOpacity,
 } from 'react-native';
 import styles from './styles';
-import BookImage from '../BookImage';
+import BookImage from '../../../../components/BookImage';
 
 function BookItem( { title, url, author, onPress }) {
     const titleTrimmed = title.trim();
