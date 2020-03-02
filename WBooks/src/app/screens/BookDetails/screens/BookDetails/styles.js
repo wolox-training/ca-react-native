@@ -7,9 +7,10 @@ import {
   lightBackgroundBlue,
   red,
   blue,
-  black
+  shadow
 } from '../../../../../constants/colors';
 
+const TEXT_LEFT_MARGIN = 15;
 const styles = StyleSheet.create({
   bookDetails: {
     backgroundColor: lightBackgroundBlue,
@@ -24,14 +25,8 @@ const styles = StyleSheet.create({
     paddingBottom: 22,
     backgroundColor: white,
     borderRadius: 5,
-    shadowColor: black,
-    shadowOffset: {
-      width: 0,
-      height: 1
-    },
-    shadowOpacity: 0.3,
-    shadowRadius: 1,
-    alignItems: 'center'
+    alignItems: 'center',
+    ...shadow
   },
   bookInfoContainer: {
     marginBottom: 30,
@@ -48,21 +43,18 @@ const styles = StyleSheet.create({
     resizeMode: 'contain'
   },
   title: {
-    marginLeft: 15,
+    marginLeft: TEXT_LEFT_MARGIN,
     color: darkGray,
     fontWeight: 'bold',
     fontSize: 24,
     lineHeight: 29
   },
   status: {
-    marginLeft: 15,
     color: red,
-    fontWeight: 'bold',
-    lineHeight: 18,
-    fontSize: 15
+    fontWeight: 'bold'
   },
   subtitle: {
-    marginLeft: 15,
+    marginLeft: TEXT_LEFT_MARGIN,
     color: lightGray,
     lineHeight: 18,
     fontSize: 15

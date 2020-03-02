@@ -17,7 +17,7 @@ function BookDetails({ route }) {
             <BookImage style={styles.bookImage} url={imageUrl} />
             <View style={styles.bookInfo}>
               <Text style={styles.title}>{title.trim()}</Text>
-              <Text style={styles.status}>Not available</Text>
+              <Text style={[styles.subtitle, styles.status]}>Not available</Text>
               <Text style={styles.subtitle}>{author}</Text>
               <Text style={styles.subtitle}>{year}</Text>
               <Text style={styles.subtitle}>{genre}</Text>
