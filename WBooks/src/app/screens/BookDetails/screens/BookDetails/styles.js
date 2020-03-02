@@ -15,7 +15,7 @@ const styles = StyleSheet.create({
     backgroundColor: lightBackgroundBlue,
     height: '100%'
   },
-  bookInfoContainer: {
+  container: {
     marginHorizontal: 20,
     marginTop: 20,
     marginBottom: 5,
@@ -24,24 +24,29 @@ const styles = StyleSheet.create({
     paddingBottom: 22,
     backgroundColor: white,
     borderRadius: 5,
-    flexDirection: 'row',
-    flexWrap: 'wrap',
     shadowColor: black,
     shadowOffset: {
-        width: 0,
-        height: 1
+      width: 0,
+      height: 1
     },
     shadowOpacity: 0.3,
-    shadowRadius: 1
+    shadowRadius: 1,
+    alignItems: 'center'
+  },
+  bookInfoContainer: {
+    marginBottom: 30,
+    flexDirection: 'row',
+    alignItems: 'flex-start'
   },
   bookInfo: {
-    flexDirection: 'column'
+    flexDirection: 'column',
+    flex: 1
   },
   bookImage: {
     width: 70,
-    height: 130,
+    height: 105,
     resizeMode: 'contain'
-},
+  },
   title: {
     marginLeft: 15,
     color: darkGray,
@@ -63,12 +68,14 @@ const styles = StyleSheet.create({
     fontSize: 15
   },
   buttonsContainer: {
+    width: '100%',
     height: 98,
+    flexDirection: 'column',
     justifyContent: 'space-between'
   },
   button: {
+    width: '100%',
     height: 44,
-    width: 275,
     borderColor: blue,
     borderWidth: 1,
     borderRadius: 100,

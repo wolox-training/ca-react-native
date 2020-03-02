@@ -12,14 +12,16 @@ function BookDetails({ route }) {
   return (
     <SafeAreaView>
       <ScrollView style={styles.bookDetails}>
-        <View style={styles.bookInfoContainer}>
-          <BookImage style={styles.bookImage} url={imageUrl} />
-          <View style={styles.bookInfo}>
-            <Text style={styles.title}>{title}</Text>
-            <Text style={styles.status}>Not available</Text>
-            <Text style={styles.subtitle}>{author}</Text>
-            <Text style={styles.subtitle}>{year}</Text>
-            <Text style={styles.subtitle}>{genre}</Text>
+        <View style={styles.container}>
+          <View style={styles.bookInfoContainer}>
+            <BookImage style={styles.bookImage} url={imageUrl} />
+            <View style={styles.bookInfo}>
+              <Text style={styles.title}>{title.trim()}</Text>
+              <Text style={styles.status}>Not available</Text>
+              <Text style={styles.subtitle}>{author}</Text>
+              <Text style={styles.subtitle}>{year}</Text>
+              <Text style={styles.subtitle}>{genre}</Text>
+            </View>
           </View>
           <View style={styles.buttonsContainer}>
             <TouchableOpacity style={styles.button}>
