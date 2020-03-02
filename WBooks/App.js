@@ -5,20 +5,25 @@
  * @format
  * @flow
  */
-
+import 'react-native-gesture-handler';
 import React from 'react';
-import { StatusBar } from 'react-native';
-import BookList from './src/app/screens/Library/screens/BookItem';
-import Header from './src/app/components/Header';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 
-function App() {
-  return (
-    <>
-      <StatusBar barStyle='light-content' />
-      <Header />
-      <BookList />
-    </>
-  );
-};
+import BookList from './src/app/screens/Library/screens/BookList';
+import BookDetails from './src/app/screens/BookDetails/screens/BookDetails';
+
+const Stack = createStackNavigator();
+
+const App = () => (
+  <>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Library" component={BookList} />
+        <Stack.Screen name="Details" component={BookDetails} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  </>
+);
 
 export default App;

@@ -1,4 +1,5 @@
 import { StyleSheet }  from 'react-native';
+
 import { white, darkGray, lightGray } from '../../../../../constants/colors';
 
 const styles = StyleSheet.create({
@@ -10,27 +11,27 @@ const styles = StyleSheet.create({
     paddingVertical: 15,
     height: 100,
     backgroundColor: white,
-    flexDirection: 'row',
+    flexDirection: 'row'
   },
   bookImage: {
     width: 50,
     height: 70,
-    resizeMode: 'contain',
+    resizeMode: 'contain'
   },
   bookDescription: {
-    flex: 1,
+    flex: 1
   },
   title: {
     marginLeft: 15,
     color: darkGray,
     fontSize: 17,
-    fontWeight: 'bold',
+    fontWeight: 'bold'
   },
   author: {
     marginLeft: 15,
     color: lightGray,
-    fontSize: 15,
-  },
+    fontSize: 15
+  }
 });
 
 export default styles;
