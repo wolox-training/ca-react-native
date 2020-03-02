@@ -11,12 +11,9 @@ import styles from './styles';
 const serializer = new CamelcaseSerializer();
 
 class BookList extends Component {
-  onSelection = () => this.props.navigation.navigate('Details');
+  onSelection = item => this.props.navigation.navigate('Details', { book: item });
 
-  renderBook = ({ item }) => {
-    const { title, imageUrl, author } = item;
-    return <BookItem title={title} url={imageUrl} author={author} handleOnPress={this.onSelection} />;
-  };
+  renderBook = ({ item }) => <BookItem book={item} handleOnPress={this.onSelection} />;
 
   elementKeyExtractor = item => item.id.toString();
 

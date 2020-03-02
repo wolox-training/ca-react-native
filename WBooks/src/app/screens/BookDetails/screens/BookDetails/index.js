@@ -6,7 +6,8 @@ import BookImage from '../../../../components/BookImage';
 
 import styles from './styles';
 
-function BookDetails({ book }) {
+function BookDetails({ route }) {
+  const { book } = route.params;
   const { title, author, year, genre, imageUrl } = book;
   return (
     <SafeAreaView>
@@ -35,14 +36,17 @@ function BookDetails({ book }) {
 }
 
 BookDetails.propTypes = {
-  author: PropTypes.string.isRequired,
-  book: PropTypes.shape({
-    author: PropTypes.string.isRequired,
-    genre: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired,
-    year: PropTypes.string.isRequired,
-    imageUrl: PropTypes.string
-  }).isRequired
+  route: PropTypes.shape({
+    params: PropTypes.shape({
+      book: PropTypes.shape({
+        author: PropTypes.string.isRequired,
+        genre: PropTypes.string.isRequired,
+        title: PropTypes.string.isRequired,
+        year: PropTypes.string.isRequired,
+        imageUrl: PropTypes.string
+      }).isRequired
+    }).isRequired
+  })
 };
 
 export default BookDetails;
