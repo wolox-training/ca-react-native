@@ -6,7 +6,9 @@ const styles = StyleSheet.create({
   commentContainer: {
     backgroundColor: white,
     flexDirection: 'row',
-    paddingVertical: 15
+    paddingVertical: 15,
+    paddingHorizontal: 15,
+    width: '100%'
   },
   commentTextContainer: {
     marginLeft: 20
