@@ -3,16 +3,20 @@ import PropTypes from 'prop-types';
 import { View, ScrollView, SafeAreaView } from 'react-native';
 
 import BookInfo from '../../components/BookInfo';
+import BookComments from '../../components/BookComments';
 
 import styles from './styles';
 
 function BookDetails({ route }) {
   const { book } = route.params;
   return (
-    <SafeAreaView>
-      <ScrollView style={styles.bookDetails}>
-        <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
+      <ScrollView nestedScrollEnabled style={styles.bookDetails}>
+        <View style={[styles.sectionContainer, styles.infoContainer]}>
           <BookInfo book={book} />
+        </View>
+        <View style={styles.sectionContainer}>
+          <BookComments book={book} />
         </View>
       </ScrollView>
     </SafeAreaView>
