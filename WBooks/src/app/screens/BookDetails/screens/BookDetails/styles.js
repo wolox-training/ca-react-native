@@ -4,7 +4,8 @@ import { white, lightBackgroundBlue, shadow } from '../../../../../constants/col
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1
+    flex: 1,
+    backgroundColor: lightBackgroundBlue
   },
   bookDetails: {
     backgroundColor: lightBackgroundBlue,

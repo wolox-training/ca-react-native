@@ -11,7 +11,8 @@ const styles = StyleSheet.create({
     width: '100%'
   },
   commentTextContainer: {
-    marginLeft: 20
+    paddingHorizontal: 20,
+    width: '100%'
   },
   title: {
     color: darkGray,
@@ -25,7 +26,7 @@ const styles = StyleSheet.create({
     fontWeight: '300',
     fontSize: 15,
     lineHeight: 18,
-    flex: 1
+    width: '100%'
   },
   userImage: {
     width: 45,

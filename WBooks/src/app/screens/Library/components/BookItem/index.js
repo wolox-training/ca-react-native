@@ -18,7 +18,7 @@ class BookItem extends PureComponent {
     const titleTrimmed = title.trim();
     return (
       <TouchableOpacity style={styles.bookItem} onPress={this.handlePress}>
-        <BookImage style={styles.bookImage} url={imageUrl} />
+        <BookImage style={styles.bookImage} url={imageUrl} defaultImageName="default_book_image.png" />
         <View style={styles.bookDescription}>
           <Text style={styles.title}>{titleTrimmed}</Text>
           <Text style={styles.author}>{author}</Text>

@@ -5,7 +5,7 @@ const comments = [
       name: 'John Doe',
       imageURl: null
     },
-    message: 'This is a great book and I need a large test so I can test it con the beautiful cell'
+    message: 'This is a great book and I need a large text so I can test it within the beautiful cell'
   },
   {
     id: 2,
@@ -29,7 +29,8 @@ const comments = [
       name: 'Jenny Doe',
       imageURl: null
     },
-    message: 'This is a great book 1234567890 098765432 1234567890 0987654321 234567890 987654321 234567890 987654321'
+    message:
+      'This is a great book 1234567890 098765432 1234567890 0987654321 234567890 987654321 234567890 987654321'
   },
   {
     id: 5,
