@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { View, Text, TouchableOpacity } from 'react-native';
 
-import BookImage from '../../../../components/BookImage';
-import defaultProfileImage from '../../../../../constants/images';
+import CustomImage from '../../../../components/CustomImage';
+import images from '../../../../../constants/images';
 
 import styles from './styles';
 
@@ -12,7 +12,7 @@ function BookInfo({ book }) {
   return (
     <>
       <View style={styles.bookInfoContainer}>
-        <BookImage style={styles.bookImage} url={imageUrl} defaultImageName={defaultProfileImage} />
+        <CustomImage style={styles.bookImage} url={imageUrl} defaultImage={images.defaultBookImage} />
         <View style={styles.bookInfo}>
           <Text style={styles.title}>{title.trim()}</Text>
           <Text style={[styles.subtitle, styles.status]}>Not available</Text>

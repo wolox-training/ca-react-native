@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { View, Text } from 'react-native';
 
-import BookImage from '../../../../../../components/BookImage';
-import defaultBookImage from '../../../../../../../constants/images';
+import CustomImage from '../../../../../../components/CustomImage';
+import images from '../../../../../../../constants/images';
 
 import styles from './styles';
 
@@ -12,7 +12,7 @@ function CommentItem({ comment }) {
   const { imageUrl, name } = user;
   return (
     <View style={styles.commentContainer}>
-      <BookImage style={styles.userImage} url={imageUrl} defaultImageName={defaultBookImage} />
+      <CustomImage style={styles.userImage} url={imageUrl} defaultImage={images.defaultProfileImage} />
       <View style={styles.commentTextContainer}>
         <Text style={styles.title}>{name}</Text>
         <Text style={styles.commentText}>{message}</Text>

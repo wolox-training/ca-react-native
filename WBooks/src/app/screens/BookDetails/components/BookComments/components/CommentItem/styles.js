@@ -1,18 +1,19 @@
 import { StyleSheet } from 'react-native';
 
-import { darkGray, lightGray, white } from '../../../../../../../constants/colors';
+import { darkGray, lightGray, white, lightBackgroundBlue } from '../../../../../../../constants/colors';
 
+const IMAGE_WIDTH = 45;
 const styles = StyleSheet.create({
   commentContainer: {
     backgroundColor: white,
     flexDirection: 'row',
     paddingVertical: 15,
-    paddingHorizontal: 15,
-    width: '100%'
+    paddingHorizontal: 15
   },
   commentTextContainer: {
-    paddingHorizontal: 20,
-    width: '100%'
+    paddingLeft: 20,
+    paddingRight: 10,
+    flex: 1
   },
   title: {
     color: darkGray,
@@ -25,13 +26,15 @@ const styles = StyleSheet.create({
     color: lightGray,
     fontWeight: '300',
     fontSize: 15,
-    lineHeight: 18,
-    width: '100%'
+    lineHeight: 18
   },
   userImage: {
-    width: 45,
-    height: 45,
-    resizeMode: 'contain'
+    padding: 5,
+    width: IMAGE_WIDTH,
+    height: IMAGE_WIDTH,
+    resizeMode: 'contain',
+    borderRadius: IMAGE_WIDTH / 2,
+    backgroundColor: lightBackgroundBlue
   }
 });
 

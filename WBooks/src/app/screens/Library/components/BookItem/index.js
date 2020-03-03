@@ -2,7 +2,8 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { View, Text, TouchableOpacity } from 'react-native';
 
-import BookImage from '../../../../components/BookImage';
+import CustomImage from '../../../../components/CustomImage';
+import images from '../../../../../constants/images';
 
 import styles from './styles';
 
@@ -18,7 +19,7 @@ class BookItem extends PureComponent {
     const titleTrimmed = title.trim();
     return (
       <TouchableOpacity style={styles.bookItem} onPress={this.handlePress}>
-        <BookImage style={styles.bookImage} url={imageUrl} defaultImageName="default_book_image.png" />
+        <CustomImage style={styles.bookImage} url={imageUrl} defaultImage={images.defaultBookImage} />
         <View style={styles.bookDescription}>
           <Text style={styles.title}>{titleTrimmed}</Text>
           <Text style={styles.author}>{author}</Text>
