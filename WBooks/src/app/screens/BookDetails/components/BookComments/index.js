@@ -1,9 +1,10 @@
 import React, { PureComponent } from 'react';
-import { Button } from 'react-native';
+import { TouchableOpacity, Text } from 'react-native';
 
 import comments from '../../../../../constants/comments';
 
 import CommentItem from './components/CommentItem';
+import styles from './styles';
 
 const INITIAL_SHOWN_COMMENTS = 2;
 
@@ -27,7 +28,11 @@ class BookComments extends PureComponent {
     return (
       <>
         {selectedComments.map(this.renderComment)}
-        {!showAll && <Button title="View All" onPress={this.handleShowAllComments} />}
+        {!showAll && (
+          <TouchableOpacity style={styles.viewAllButton} onPress={this.handleShowAllComments}>
+            <Text style={styles.viewAllText}>View All</Text>
+          </TouchableOpacity>
+        )}
       </>
     );
   }
