@@ -7,8 +7,7 @@ const styles = StyleSheet.create({
   commentContainer: {
     backgroundColor: white,
     flexDirection: 'row',
-    paddingVertical: 15,
-    paddingHorizontal: 15
+    padding: 15
   },
   commentTextContainer: {
     paddingLeft: 20,
@@ -29,7 +28,6 @@ const styles = StyleSheet.create({
     lineHeight: 18
   },
   userImage: {
-    padding: 5,
     width: IMAGE_WIDTH,
     height: IMAGE_WIDTH,
     resizeMode: 'contain',

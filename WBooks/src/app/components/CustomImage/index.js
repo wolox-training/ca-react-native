@@ -7,7 +7,6 @@ function CustomImage({ style, url, defaultImage }) {
 }
 
 CustomImage.propTypes = {
-  // eslint-disable-next-line react/forbid-foreign-prop-types
   defaultImage: PropTypes.number.isRequired,
   // eslint-disable-next-line react/forbid-foreign-prop-types
   style: Image.propTypes.style,
