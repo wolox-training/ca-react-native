@@ -27,12 +27,17 @@ const styles = StyleSheet.create({
     fontSize: 15,
     lineHeight: 18
   },
-  userImage: {
+  userImageContainer: {
     width: IMAGE_WIDTH,
     height: IMAGE_WIDTH,
-    resizeMode: 'contain',
+    overflow: 'hidden',
     borderRadius: IMAGE_WIDTH / 2,
     backgroundColor: lightBackgroundBlue
+  },
+  userImage: {
+    width: '100%',
+    height: '100%',
+    resizeMode: 'contain'
   }
 });
 

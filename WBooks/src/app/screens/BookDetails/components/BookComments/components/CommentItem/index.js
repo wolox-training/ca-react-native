@@ -11,7 +11,9 @@ function CommentItem({ comment }) {
   const { message, user } = comment;
   return (
     <View style={styles.commentContainer}>
-      <CustomImage style={styles.userImage} url={user.imageUrl} defaultImage={images.defaultProfileImage} />
+      <View style={styles.userImageContainer}>
+        <CustomImage style={styles.userImage} url={user.imageUrl} defaultImage={images.defaultProfileImage} />
+      </View>
       <View style={styles.commentTextContainer}>
         <Text style={styles.title}>{user.name}</Text>
         <Text style={styles.commentText}>{message}</Text>
