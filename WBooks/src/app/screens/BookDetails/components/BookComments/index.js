@@ -15,13 +15,6 @@ class BookComments extends Component {
 
   selectedComments = comments.slice(0, INITIAL_SHOWN_COMMENTS);
 
-  // componentDidUpdate(prevProps, prevState) {
-  //   if (prevState.selectedComments.length === 0) {
-  //     // eslint-disable-next-line react/no-did-update-set-state
-  //     this.setState({ selectedComments: comments.slice(0, INITIAL_SHOWN_COMMENTS) });
-  //   }
-  // }
-
   renderComment = item => <CommentItem key={this.elementKeyExtractor(item)} comment={item} />;
 
   elementKeyExtractor = item => `${item.id}`;
@@ -33,7 +26,6 @@ class BookComments extends Component {
 
   render() {
     const { showAll } = this.state;
-    // const selectedComments = showAll ? comments : comments.slice(0, INITIAL_SHOWN_COMMENTS);
     return (
       <>
         {this.selectedComments.map(this.renderComment)}
