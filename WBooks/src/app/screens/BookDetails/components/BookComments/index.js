@@ -13,18 +13,30 @@ class BookComments extends Component {
     showAll: false
   };
 
+  selectedComments = comments.slice(0, INITIAL_SHOWN_COMMENTS);
+
+  // componentDidUpdate(prevProps, prevState) {
+  //   if (prevState.selectedComments.length === 0) {
+  //     // eslint-disable-next-line react/no-did-update-set-state
+  //     this.setState({ selectedComments: comments.slice(0, INITIAL_SHOWN_COMMENTS) });
+  //   }
+  // }
+
   renderComment = item => <CommentItem key={this.elementKeyExtractor(item)} comment={item} />;
 
   elementKeyExtractor = item => `${item.id}`;
 
-  handleShowAllComments = () => this.setState({ showAll: true });
+  handleShowAllComments = () => {
+    this.setState({ showAll: true });
+    this.selectedComments = comments;
+  };
 
   render() {
     const { showAll } = this.state;
-    const selectedComments = showAll ? comments : comments.slice(0, INITIAL_SHOWN_COMMENTS);
+    // const selectedComments = showAll ? comments : comments.slice(0, INITIAL_SHOWN_COMMENTS);
     return (
       <>
-        {selectedComments.map(this.renderComment)}
+        {this.selectedComments.map(this.renderComment)}
         {!showAll && (
           <TouchableOpacity style={styles.viewAllButton} onPress={this.handleShowAllComments}>
             <Text style={styles.viewAllText}>View All</Text>
