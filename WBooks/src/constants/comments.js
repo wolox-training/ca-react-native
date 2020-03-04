@@ -21,7 +21,7 @@ const comments = [
       name: 'Ignacio Abadie',
       imageURl: null
     },
-    message: "I'll love RN for ever"
+    message: "I'll love RN forever"
   },
   {
     id: 4,

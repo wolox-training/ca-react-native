@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 import { TouchableOpacity, Text } from 'react-native';
 
 import comments from '../../../../../constants/comments';
@@ -8,17 +8,14 @@ import styles from './styles';
 
 const INITIAL_SHOWN_COMMENTS = 2;
 
-class BookComments extends PureComponent {
-  constructor(props) {
-    super(props);
-    this.state = {
-      showAll: false
-    };
-  }
+class BookComments extends Component {
+  state = {
+    showAll: false
+  };
 
   renderComment = item => <CommentItem key={this.elementKeyExtractor(item)} comment={item} />;
 
-  elementKeyExtractor = item => item.id.toString();
+  elementKeyExtractor = item => `${item.id}`;
 
   handleShowAllComments = () => this.setState({ showAll: true });
 
