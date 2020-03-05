@@ -1,25 +1,14 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Dimensions } from 'react-native';
 
-import { lightBackgroundBlue, white } from '../../../constants/colors';
+import { lightBackgroundBlue } from '../../../constants/colors';
+
+const TOTAL_WIDTH = Dimensions.width;
 
 const styles = StyleSheet.create({
-  background: {
-    height: 150,
-    width: '100%',
-    justifyContent: 'center',
-    alignItems: 'center',
+  image: {
+    width: TOTAL_WIDTH,
+    height: 140,
     backgroundColor: lightBackgroundBlue
-  },
-  logo: {
-    overflow: 'visible',
-    resizeMode: 'cover',
-    height: '100%',
-    width: '100%'
-  },
-  text: {
-    fontSize: 25,
-    textAlign: 'center',
-    color: white
   }
 });
 
