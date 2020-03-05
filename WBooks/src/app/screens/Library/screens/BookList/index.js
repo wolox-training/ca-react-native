@@ -15,7 +15,7 @@ class BookList extends Component {
 
   renderBook = ({ item }) => <BookItem book={item} handleOnPress={this.onSelection} />;
 
-  elementKeyExtractor = item => item.id.toString();
+  elementKeyExtractor = item => `${item.id}`;
 
   render() {
     const serializedData = serializer.serialize(booksList);
