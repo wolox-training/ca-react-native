@@ -6,7 +6,7 @@
  * @flow
  */
 import 'react-native-gesture-handler';
-import React from 'react';
+import React, { Component } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
@@ -15,15 +15,23 @@ import BookDetails from './src/app/screens/BookDetails/screens/BookDetails';
 
 const Stack = createStackNavigator();
 
-const App = () => (
-  <>
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="Library" component={BookList} />
-        <Stack.Screen name="Details" component={BookDetails} />
-      </Stack.Navigator>
-    </NavigationContainer>
-  </>
-);
+class App extends Component {
+  static navigationOptions = {
+    title: 'Library'
+  };
+
+  render() {
+    return (
+      <>
+        <NavigationContainer>
+          <Stack.Navigator>
+            <Stack.Screen name="Library" component={BookList} />
+            <Stack.Screen name="Details" component={BookDetails} />
+          </Stack.Navigator>
+        </NavigationContainer>
+      </>
+    );
+  }
+}
 
 export default App;
