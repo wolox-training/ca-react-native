@@ -9,23 +9,24 @@ import 'react-native-gesture-handler';
 import React, { Component } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+import { StatusBar } from 'react-native';
 
 import BookList from './src/app/screens/Library/screens/BookList';
 import BookDetails from './src/app/screens/BookDetails/screens/BookDetails';
 import CustomHeader from './src/app/components/CustomHeader';
+import { white } from './src/constants/colors';
 
 const Stack = createStackNavigator();
 
 class App extends Component {
-  static navigationOptions = {
-    title: 'Library'
-  };
+  customHeader = () => <CustomHeader />;
 
   render() {
     return (
       <>
         <NavigationContainer>
-          <Stack.Navigator screenOptions={{ header: props => <CustomHeader {...props} /> }}>
+          <StatusBar barStyle="light-content" />
+          <Stack.Navigator screenOptions={{ headerBackground: this.customHeader, headerTintColor: white }}>
             <Stack.Screen name="Library" component={BookList} />
             <Stack.Screen name="Details" component={BookDetails} />
           </Stack.Navigator>

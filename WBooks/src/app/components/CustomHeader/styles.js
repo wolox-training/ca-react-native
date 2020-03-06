@@ -7,7 +7,7 @@ const TOTAL_WIDTH = Dimensions.width;
 const styles = StyleSheet.create({
   image: {
     width: TOTAL_WIDTH,
-    height: 140,
+    height: 120,
     backgroundColor: lightBackgroundBlue
   }
 });

@@ -1,6 +1,7 @@
 import { StyleSheet } from 'react-native';
 
 import { white, lightBackgroundBlue, shadow } from '../../../../../constants/colors';
+import { TOP_PADDING } from '../../../../../constants/safeAreaConstants';
 
 const styles = StyleSheet.create({
   container: {
@@ -8,6 +9,7 @@ const styles = StyleSheet.create({
     backgroundColor: lightBackgroundBlue
   },
   bookDetails: {
+    paddingTop: TOP_PADDING,
     backgroundColor: lightBackgroundBlue,
     height: '100%'
   },
@@ -22,7 +24,6 @@ const styles = StyleSheet.create({
     ...shadow
   },
   infoContainer: {
-    marginTop: 20,
     paddingHorizontal: 30,
     paddingVertical: 15,
     paddingBottom: 22
