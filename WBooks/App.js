@@ -17,6 +17,7 @@ import BookDetails from './src/app/screens/BookDetails/screens/BookDetails';
 import CustomHeader from './src/app/components/CustomHeader';
 import { white, blue } from './src/constants/colors';
 import images from './src/constants/images';
+import { library, details } from './src/constants/routes';
 
 const Tab = createBottomTabNavigator();
 const LibraryStack = createStackNavigator();
@@ -26,14 +27,12 @@ class App extends Component {
 
   customTabBarIcon = ({ icon }) => <Image source={icon} style={{ width: 25, height: 25 }} />;
 
-  LibraryStackScreen = () => {
-    return (
-      <LibraryStack.Navigator screenOptions={{ headerBackground: this.customHeader, headerTintColor: white }}>
-        <LibraryStack.Screen name="Library" component={BookList} />
-        <LibraryStack.Screen name="Details" component={BookDetails} />
-      </LibraryStack.Navigator>
-    );
-  }
+  LibraryStackScreen = () => (
+    <LibraryStack.Navigator screenOptions={{ headerBackground: this.customHeader, headerTintColor: white }}>
+      <LibraryStack.Screen name={library} component={BookList} />
+      <LibraryStack.Screen name={details} component={BookDetails} />
+    </LibraryStack.Navigator>
+  );
 
   render() {
     return (
