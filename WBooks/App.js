@@ -14,10 +14,11 @@ import { StatusBar, Image } from 'react-native';
 
 import BookList from './src/app/screens/Library/screens/BookList';
 import BookDetails from './src/app/screens/BookDetails/screens/BookDetails';
+import Wishlist from './src/app/screens/Wishlist';
 import CustomHeader from './src/app/components/CustomHeader';
 import { white, blue } from './src/constants/colors';
 import images from './src/constants/images';
-import { library, details } from './src/constants/routes';
+import { library, details, wishlist } from './src/constants/routes';
 
 const Tab = createBottomTabNavigator();
 const LibraryStack = createStackNavigator();
@@ -50,6 +51,16 @@ class App extends Component {
               options={{
                 tabBarIcon: ({ focused }) => {
                   const icon = focused ? images.tabBarLibraryActive : images.tabBarLibrary;
+                  return <this.customTabBarIcon icon={icon} />;
+                }
+              }}
+            />
+            <Tab.Screen
+              name={wishlist}
+              component={Wishlist}
+              options={{
+                tabBarIcon: ({ focused }) => {
+                  const icon = focused ? images.tabBarWishlistActive : images.tabBarWishlist;
                   return <this.customTabBarIcon icon={icon} />;
                 }
               }}
