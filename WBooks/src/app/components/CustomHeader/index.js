@@ -1,12 +1,12 @@
 import React from 'react';
 import { Image } from 'react-native';
 
-import navBarImage from '../../assets/bc_nav_bar.png';
+import images from '../../../constants/images';
 
 import styles from './styles';
 
 function CustomHeader() {
-  return <Image source={navBarImage} style={styles.image} />;
+  return <Image source={images.navBarImage} style={styles.image} />;
 }
 
 export default CustomHeader;
