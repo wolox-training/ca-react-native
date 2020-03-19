@@ -10,7 +10,7 @@ import React, { Component } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { StatusBar, Image } from 'react-native';
+import { StyleSheet, StatusBar, Image } from 'react-native';
 
 import BookList from './src/app/screens/Library/screens/BookList';
 import BookDetails from './src/app/screens/BookDetails/screens/BookDetails';
@@ -23,10 +23,17 @@ import { library, details, wishlist } from './src/constants/routes';
 const Tab = createBottomTabNavigator();
 const LibraryStack = createStackNavigator();
 
+const styles = StyleSheet.create({
+  tabBarItem: {
+    width: 25,
+    height: 25
+  }
+});
+
 class App extends Component {
   customHeader = () => <CustomHeader />;
 
-  customTabBarIcon = ({ icon }) => <Image source={icon} style={{ width: 25, height: 25 }} />;
+  customTabBarIcon = ({ icon }) => <Image source={icon} style={styles.tabBarItem} />;
 
   LibraryStackScreen = () => (
     <LibraryStack.Navigator screenOptions={{ headerBackground: this.customHeader, headerTintColor: white }}>
