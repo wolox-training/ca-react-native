@@ -49,7 +49,7 @@ class App extends Component {
               component={this.LibraryStackScreen}
               options={{
                 tabBarIcon: ({ focused }) => {
-                  const icon = focused ? images.defaultBookImage : images.defaultBookImage;
+                  const icon = focused ? images.tabBarLibraryActive : images.tabBarLibrary;
                   return <this.customTabBarIcon icon={icon} />;
                 }
               }}
