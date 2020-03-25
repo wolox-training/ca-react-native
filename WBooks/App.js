@@ -10,23 +10,30 @@ import React, { Component } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { StatusBar, Image } from 'react-native';
+import { StyleSheet, StatusBar, Image } from 'react-native';
 
 import BookList from './src/app/screens/Library/screens/BookList';
 import BookDetails from './src/app/screens/BookDetails/screens/BookDetails';
 import Wishlist from './src/app/screens/Wishlist';
 import CustomHeader from './src/app/components/CustomHeader';
-import { white, blue } from './src/constants/colors';
+import { white, blue, lightGray } from './src/constants/colors';
 import images from './src/constants/images';
 import { library, details, wishlist } from './src/constants/routes';
 
 const Tab = createBottomTabNavigator();
 const LibraryStack = createStackNavigator();
 
+const styles = StyleSheet.create({
+  tabBarItem: {
+    width: 25,
+    height: 25
+  }
+});
+
 class App extends Component {
   customHeader = () => <CustomHeader />;
 
-  customTabBarIcon = ({ icon }) => <Image source={icon} style={{ width: 25, height: 25 }} />;
+  customTabBarIcon = ({ icon }) => <Image source={icon} style={styles.tabBarItem} />;
 
   LibraryStackScreen = () => (
     <LibraryStack.Navigator screenOptions={{ headerBackground: this.customHeader, headerTintColor: white }}>
@@ -43,7 +50,7 @@ class App extends Component {
           <Tab.Navigator
             tabBarOptions={{
               activeTintColor: blue,
-              inactiveTintColor: 'gray'
+              inactiveTintColor: lightGray
             }}>
             <Tab.Screen
               name="Library"
