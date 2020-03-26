@@ -5,13 +5,14 @@ import { CamelcaseSerializer } from 'cerealizr';
 
 import BookItem from '../../components/BookItem';
 import booksList from '../../../../../constants/data';
+import { details } from '../../../../../constants/routes';
 
 import styles from './styles';
 
 const serializer = new CamelcaseSerializer();
 
 class BookList extends Component {
-  onSelection = item => this.props.navigation.navigate('Details', { book: item });
+  onSelection = item => this.props.navigation.navigate(details, { book: item });
 
   renderBook = ({ item }) => <BookItem book={item} handleOnPress={this.onSelection} />;
 
@@ -22,7 +23,7 @@ class BookList extends Component {
     return (
       <SafeAreaView style={styles.booksListContainer}>
         <FlatList
-          style={styles.booksFlatList}
+          contentContainerStyle={styles.booksFlatList}
           data={serializedData}
           renderItem={this.renderBook}
           keyExtractor={this.elementKeyExtractor}
