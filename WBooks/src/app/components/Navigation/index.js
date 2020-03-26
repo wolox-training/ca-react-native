@@ -5,13 +5,14 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { StatusBar, Image } from 'react-native';
 
-import BookList from './src/app/screens/Library/screens/BookList';
-import BookDetails from './src/app/screens/BookDetails/screens/BookDetails';
-import Wishlist from './src/app/screens/Wishlist';
-import CustomHeader from './src/app/components/CustomHeader';
-import { white, blue, lightGray } from './src/constants/colors';
-import images from './src/constants/images';
-import { library, details, wishlist } from './src/constants/routes';
+import BookList from '../../screens/Library/screens/BookList';
+import BookDetails from '../../screens/BookDetails/screens/BookDetails';
+import Wishlist from '../../screens/Wishlist';
+import CustomHeader from '../CustomHeader';
+import { white, blue, lightGray } from '../../../constants/colors';
+import images from '../../../constants/images';
+import { library, details, wishlist } from '../../../constants/routes';
+
 import styles from './styles';
 
 const Tab = createBottomTabNavigator();
