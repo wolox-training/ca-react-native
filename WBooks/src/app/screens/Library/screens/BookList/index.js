@@ -23,7 +23,7 @@ class BookList extends Component {
     return (
       <SafeAreaView style={styles.booksListContainer}>
         <FlatList
-          style={styles.booksFlatList}
+          contentContainerStyle={styles.booksFlatList}
           data={serializedData}
           renderItem={this.renderBook}
           keyExtractor={this.elementKeyExtractor}

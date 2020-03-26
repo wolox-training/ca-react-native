@@ -9,9 +9,7 @@ const styles = StyleSheet.create({
     backgroundColor: lightBackgroundBlue
   },
   bookDetails: {
-    paddingTop: TOP_PADDING,
-    backgroundColor: lightBackgroundBlue,
-    height: '100%'
+    paddingTop: TOP_PADDING
   },
   sectionContainer: {
     marginHorizontal: 20,

@@ -11,7 +11,7 @@ function BookDetails({ route }) {
   const { book } = route.params;
   return (
     <SafeAreaView style={styles.container}>
-      <ScrollView style={styles.bookDetails}>
+      <ScrollView contentContainerStyle={styles.bookDetails}>
         <View style={[styles.sectionContainer, styles.infoContainer]}>
           <BookInfo book={book} />
         </View>
