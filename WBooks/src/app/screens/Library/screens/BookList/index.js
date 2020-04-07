@@ -4,22 +4,41 @@ import { FlatList, SafeAreaView } from 'react-native';
 import { CamelcaseSerializer } from 'cerealizr';
 
 import BookItem from '../../components/BookItem';
-import booksList from '../../../../../constants/data';
 import { details } from '../../../../../constants/routes';
+import store from '../../../../../redux/store';
+import { getBooks } from '../../../../../redux/actionCreators';
 
 import styles from './styles';
 
 const serializer = new CamelcaseSerializer();
 
 class BookList extends Component {
+  state = {
+    books: []
+  };
+
+  componentDidMount() {
+    store.subscribe(() => {
+      this.setState({
+        books: store.getState().books
+      });
+    });
+
+    this.getBooks();
+  }
+
   onSelection = item => this.props.navigation.navigate(details, { book: item });
 
   renderBook = ({ item }) => <BookItem book={item} handleOnPress={this.onSelection} />;
 
   elementKeyExtractor = item => `${item.id}`;
 
+  getBooks = () => {
+    store.dispatch(getBooks());
+  };
+
   render() {
-    const serializedData = serializer.serialize(booksList);
+    const serializedData = serializer.serialize(this.state.books);
     return (
       <SafeAreaView style={styles.booksListContainer}>
         <FlatList
