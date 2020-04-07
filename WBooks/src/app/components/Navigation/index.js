@@ -4,6 +4,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { StatusBar, Image } from 'react-native';
+import { Provider } from 'react-redux';
 
 import BookList from '../../screens/Library/screens/BookList';
 import BookDetails from '../../screens/BookDetails/screens/BookDetails';
@@ -12,6 +13,7 @@ import CustomHeader from '../CustomHeader';
 import { white, blue, lightGray } from '../../../constants/colors';
 import images from '../../../constants/images';
 import { library, details, wishlist } from '../../../constants/routes';
+import store from '../../../redux/store';
 
 import styles from './styles';
 
@@ -33,35 +35,37 @@ class Navigation extends Component {
   render() {
     return (
       <>
-        <NavigationContainer>
-          <StatusBar barStyle="light-content" />
-          <Tab.Navigator
-            tabBarOptions={{
-              activeTintColor: blue,
-              inactiveTintColor: lightGray
-            }}>
-            <Tab.Screen
-              name="Library"
-              component={this.LibraryStackScreen}
-              options={{
-                tabBarIcon: ({ focused }) => {
-                  const icon = focused ? images.tabBarLibraryActive : images.tabBarLibrary;
-                  return <this.customTabBarIcon icon={icon} />;
-                }
-              }}
-            />
-            <Tab.Screen
-              name={wishlist}
-              component={Wishlist}
-              options={{
-                tabBarIcon: ({ focused }) => {
-                  const icon = focused ? images.tabBarWishlistActive : images.tabBarWishlist;
-                  return <this.customTabBarIcon icon={icon} />;
-                }
-              }}
-            />
-          </Tab.Navigator>
-        </NavigationContainer>
+        <Provider store={store}>
+          <NavigationContainer>
+            <StatusBar barStyle="light-content" />
+            <Tab.Navigator
+              tabBarOptions={{
+                activeTintColor: blue,
+                inactiveTintColor: lightGray
+              }}>
+              <Tab.Screen
+                name="Library"
+                component={this.LibraryStackScreen}
+                options={{
+                  tabBarIcon: ({ focused }) => {
+                    const icon = focused ? images.tabBarLibraryActive : images.tabBarLibrary;
+                    return <this.customTabBarIcon icon={icon} />;
+                  }
+                }}
+              />
+              <Tab.Screen
+                name={wishlist}
+                component={Wishlist}
+                options={{
+                  tabBarIcon: ({ focused }) => {
+                    const icon = focused ? images.tabBarWishlistActive : images.tabBarWishlist;
+                    return <this.customTabBarIcon icon={icon} />;
+                  }
+                }}
+              />
+            </Tab.Navigator>
+          </NavigationContainer>
+        </Provider>
       </>
     );
   }

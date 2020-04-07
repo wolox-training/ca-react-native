@@ -1,4 +1,4 @@
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
 
 import booksList from '../constants/data';
 
@@ -12,4 +12,11 @@ const reducer = (state, action) => {
   return state;
 };
 
-export default createStore(reducer, { books: [] });
+const logger = store => next => action => {
+  console.warn('dispatching', action);
+  const result = next(action);
+  console.warn('next state', store.getState());
+  return result;
+};
+
+export default createStore(reducer, { books: [] }, applyMiddleware(logger));
